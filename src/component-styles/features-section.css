@@ -1,0 +1,13 @@
+.features-section { padding:4rem 1rem; }
+.features-section .features-container { max-width: var(--container-max); margin:0 auto; }
+.features-wrapper {  padding:2rem; background:#fff; }
+.features-grid { display:grid; gap:2rem; grid-template-columns:1fr; }
+@media (min-width:768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width:1024px) { .features-grid { grid-template-columns: repeat(4, 1fr); } }
+.feature-card { text-align:center; padding:1.5rem; background:#fff; color: var(--color-text); transition: background var(--transition), color var(--transition); }
+.feature-card.highlighted { background: var(--color-accent); color:#fff; }
+.feature-icon { display:inline-flex; align-items:center; justify-content:center; width:3rem; height:3rem; border-radius:50%; margin-bottom:1rem; background:#ffedd5; }
+.feature-card.highlighted .feature-icon { background: rgba(255,255,255,.2); }
+.feature-icon img { width:1.5rem; height:1.5rem; }
+.feature-card h3 { font-size:1.125rem; margin:0 0 .75rem; font-weight:600; }
+.feature-card p { font-size:.85rem; line-height:1.5; margin:0; }

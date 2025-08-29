@@ -1,0 +1,102 @@
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Use CSS variable to control overlay opacity per instance */
+    --_ov: var(--hero-overlay-opacity, .86);
+    background: linear-gradient(rgba(0, 0, 0, var(--_ov)), rgba(0, 0, 0, var(--_ov)));
+}
+
+.hero-section .hero-inner {
+    position: relative;
+    width: 100%;
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width:1024px) {
+    .hero-section .hero-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.hero-text {
+    color: #fff;
+}
+
+.hero-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1.25rem;
+    font-size: .85rem;
+}
+
+.hero-breadcrumb span {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.hero-breadcrumb .current {
+    color: var(--color-accent);
+}
+
+.hero-subtitle {
+    color: var(--color-accent);
+    font-size: 1.125rem;
+    margin: 0 0 1rem;
+    font-family: ui-serif, Georgia, serif;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 6vw, 4rem);
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    color: var(--color-text-light);
+    margin: 0 0 2rem;
+    max-width: 34rem;
+    line-height: 1.55;
+}
+
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width:1024px) {
+    .hero-image-wrapper {
+        justify-content: flex-end;
+    }
+}
+
+.hero-image-ring {
+    width: 30rem;
+    height: 30rem;
+    overflow: hidden;
+}
+
+.hero-image-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
