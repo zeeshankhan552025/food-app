@@ -1,3 +1,5 @@
+import "../component-styles/about-section.css";
+
 export function AboutSection() {
   return (
     <section className="about-section">
@@ -49,6 +51,7 @@ export function AboutSection() {
             <div className="about-stats">
               <div className="about-stat">
                 <div className="about-stat-number">15</div>
+                <div className="about-stat-separator"></div>
                 <div className="about-stat-label">
                   <div>Years of</div>
                   <div><strong>EXPERIENCE</strong></div>
@@ -56,6 +59,7 @@ export function AboutSection() {
               </div>
               <div className="about-stat">
                 <div className="about-stat-number">50</div>
+                <div className="about-stat-separator"></div>
                 <div className="about-stat-label">
                   <div>Popular</div>
                   <div><strong>MASTER CHEFS</strong></div>

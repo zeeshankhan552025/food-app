@@ -14,7 +14,19 @@ header.site-header .nav-inner {
     margin: 0 auto;
 }
 
-header.site-header .brand {
+/* Mobile toggle */
+.menu-toggle {
+    display:none;
+    flex-direction:column;
+    gap:4px;
+    background:none;
+    border:none;
+    padding:.5rem;
+    cursor:pointer;
+}
+.menu-toggle .bar { width:22px; height:2px; background:#fff; display:block; border-radius:1px; }
+
+header.site-header .brand, header.site-header .brand-button {
     font-family: var(--font-brand, 'Mochiy Pop One', 'Poppins', system-ui, sans-serif);
     display: inline-flex;
     align-items: center;
@@ -24,6 +36,10 @@ header.site-header .brand {
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0;
 }
 
 /* Logo */
@@ -55,14 +71,7 @@ header.site-header .brand {
     --gap: 2rem;
 }
 
-.primary-nav .nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: var(--gap);
-}
+.primary-nav .nav-list { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: var(--gap); }
 
 .nav-link {
     position: relative;
@@ -73,6 +82,10 @@ header.site-header .brand {
     text-transform: uppercase;
     font-weight: 500;
     transition: color .25s ease;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0;
 }
 
 .nav-link:hover,
@@ -84,16 +97,7 @@ header.site-header .brand {
     color: var(--color-accent, #FEA116);
 }
 
-.nav-link.is-active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -.4rem;
-    height: 2px;
-    background: currentColor;
-    border-radius: 1px;
-}
+/* Removed underline bar for active nav links per request */
 
 /* Call to action button */
 .cta-btn {
@@ -109,6 +113,8 @@ header.site-header .brand {
     border-radius: 0.3rem;
     line-height: 1;
     transition: background .25s ease, transform .25s ease;
+    border:none;
+    cursor:pointer;
 }
 
 .cta-btn:hover,
@@ -127,16 +133,10 @@ header.site-header .brand {
 
 /* Responsive adjustments */
 @media (max-width: 720px) {
-    .primary-nav .nav-list {
-        gap: 1rem;
-    }
-
-    .nav-link {
-        font-size: .75rem;
-    }
-
-    .cta-btn {
-        padding: .55rem 1rem;
-        font-size: .7rem;
-    }
+    .menu-toggle { display:flex; }
+    .primary-nav { position:absolute; top:100%; right:1rem; background:rgba(0,0,0,.75); backdrop-filter:blur(6px); padding:1rem 1.25rem; border-radius:.75rem; transform-origin: top right; transform: scale(.95) translateY(-6px); opacity:0; pointer-events:none; transition: .25s ease; }
+    .primary-nav[data-open] { opacity:1; transform: scale(1) translateY(0); pointer-events:auto; }
+    .primary-nav .nav-list { flex-direction:column; align-items:flex-start; gap:.75rem; }
+    .nav-link { font-size:.8rem; }
+    .cta-btn { width:100%; text-align:center; }
 }

@@ -8,19 +8,19 @@ const features = [
     highlighted: true,
   },
   {
-    icon: "fork.svg",
+    icon: "/fork.svg",
     title: "Quality Food",
     description: "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
     highlighted: false,
   },
   {
-    icon: "cart.svg",
+    icon: "/cart.svg",
     title: "Online Order",
     description: "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
     highlighted: false,
   },
   {
-    icon: "support.svg",
+    icon: "/support.svg",
     title: "24/7 Service",
     description: "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
     highlighted: false,
@@ -48,3 +48,4 @@ export function FeaturesSection() {
     </section>
   )
 }
+import "../component-styles/features-section.css";
