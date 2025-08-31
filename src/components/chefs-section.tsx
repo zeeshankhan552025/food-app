@@ -12,7 +12,11 @@ export function ChefsSection() {
     <section className="chefs-section" aria-labelledby="chefs-heading">
       <div className="chefs-wrapper">
         <header className="chefs-head">
-          <p className="chefs-eyebrow">Team Members</p>
+          <div className="chefs-eyebrow-container">
+            <div className="chefs-line"></div>
+            <p className="chefs-eyebrow">Team Members</p>
+            <div className="chefs-line"></div>
+          </div>
           <h2 id="chefs-heading" className="chefs-title">Our Master Chefs</h2>
         </header>
         <ul className="chefs-grid">

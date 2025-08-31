@@ -25,7 +25,7 @@
     width: 100%;
     max-width: var(--container-wide);
     margin: 0 auto;
-    padding: 6rem 1.25rem 3rem;
+    padding: 10rem 1.25rem 3rem;
     display: grid;
     gap: 3rem;
     grid-template-columns: 1fr;
@@ -34,7 +34,7 @@
 @media (min-width:1024px) {
     .hero-section .hero-inner {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 1.5rem;
+        padding: 4rem 1.5rem;
     }
 }
 
@@ -110,7 +110,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    animation: hero-spin 40s linear infinite;
+    animation: hero-spin 60s linear infinite;
     transform-origin: 50% 50%;
 }
 
@@ -131,5 +131,14 @@
 @media (max-width:640px) {
     .hero-description {
         font-size: .95rem;
+    }
+}
+
+@keyframes hero-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }

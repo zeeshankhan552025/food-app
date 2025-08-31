@@ -15,12 +15,27 @@
     margin: 0 0 3rem;
 }
 
+.menu-eyebrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 0 .5rem;
+}
+
 .section-menu .subtitle {
     color: var(--color-accent, #FEA116);
     font-weight: 500;
     font-size: 1rem;
-    margin: 0 0 .5rem;
+    margin: 0;
     font-family: 'Pacifico', cursive;
+}
+
+.menu-line {
+    width: 3rem;
+    height: 2px;
+    background: var(--color-accent, #FEA116);
+    border-radius: 1px;
 }
 
 .section-menu .title {
@@ -46,7 +61,7 @@
     bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% - 22rem);
+    width: calc(100% - 46rem);
     height: 2px;
     background-color: #d1d5db;
 }
@@ -55,17 +70,60 @@
     background: none;
     border: none;
     font: inherit;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: .5rem;
+    gap: .25rem;
     cursor: pointer;
     color: #475569;
     font-weight: 500;
-    padding: .35rem .75rem;
-    border-radius: 1.5rem;
+    padding: .5rem 1rem;
     transition: color .25s ease;
     position: relative;
     z-index: 1;
+    text-align: center;
+    min-width: 120px;
+}
+
+.menu-tabs .tab .emoji {
+    margin-bottom: .5rem;
+}
+
+.menu-tabs .tab .emoji img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.menu-tabs .tab .tab-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .1rem;
+}
+
+.menu-tabs .tab .tab-label {
+    font-size: .75rem;
+    color: #64748b;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.menu-tabs .tab .tab-category {
+    font-size: .9rem;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.menu-tabs .tab.is-active .tab-label,
+.menu-tabs .tab:hover .tab-label {
+    color: var(--color-accent, #FEA116);
+}
+
+.menu-tabs .tab.is-active .tab-category,
+.menu-tabs .tab:hover .tab-category {
+    color: var(--color-accent, #FEA116);
 }
 
 .menu-tabs .tab:hover,
@@ -83,8 +141,8 @@
     bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 184px;
-    height: 2px;
+    width: 120px;
+    height: 3px;
     background-color: var(--color-accent, #FEA116);
     z-index: 2;
 }

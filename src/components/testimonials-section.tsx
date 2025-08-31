@@ -12,7 +12,11 @@ export function TestimonialsSection() {
       <div className="testimonials-inner">
         <div className="testimonials-shell">
           <header className="testimonials-head">
-            <p className="testimonials-eyebrow">Testimonial</p>
+            <div className="testimonials-eyebrow-container">
+              <div className="testimonials-line"></div>
+              <p className="testimonials-eyebrow">Testimonial</p>
+              <div className="testimonials-line"></div>
+            </div>
             <h2 id="testimonials-heading" className="testimonials-title">Our Clients Say!!!</h2>
           </header>
           <div className="testimonials-grid">

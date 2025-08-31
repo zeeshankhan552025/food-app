@@ -31,7 +31,11 @@ export function AboutSection() {
         {/* Content */}
         <div className="about-content">
             <div>
-              <p className="about-label">About Us</p>
+              <div className="about-eyebrow-container">
+                <div className="about-line"></div>
+                <p className="about-label">About Us</p>
+                <div className="about-line"></div>
+              </div>
               <h2 className="about-title">
                 Welcome to <span><img src="/about-logo.svg" alt="" /></span> Restoran
               </h2>
