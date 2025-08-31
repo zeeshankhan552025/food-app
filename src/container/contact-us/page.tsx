@@ -1,23 +1,25 @@
+import { ContactHero } from "../../components/contact-hero";
 import { ContactSection } from "../../components/contact-section";
 import { Footer } from "../../components/footer";
 import { Header } from "../../components/header";
-import { HeroSection } from "../../components/hero-section";
 
 export default function Contact() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen flex flex-col">
       <Header />
-      <HeroSection
+      <ContactHero
         title="Contact Us"
-        showBreadcrumb={true}
         breadcrumbItems={["HOME", "CONTACT"]}
         backgroundImage="/contact-page-banner.svg"
         overlayOpacity={0.4}
+        customHeight="397px"
       />
-      <div className="bg-gray-50">
-        <ContactSection />
-        <Footer />
+      <div className="bg-gray-50 flex-1">
+        <div className="container mx-auto px-4">
+          <ContactSection />
+        </div>
       </div>
+      <Footer />
     </main>
   )
 }

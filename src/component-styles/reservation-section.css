@@ -43,7 +43,7 @@
 }
 
 .reservation-form-panel {
-    background: #1e293b;
+    background: #0f172a;
     color: #fff;
     padding: 2rem 2rem;
     display: flex;
@@ -62,18 +62,35 @@
     margin: 0 0 2rem;
 }
 
-.reservation-eyebrow {
-    color: var(--color-accent, #FEA116);
-    font-size: 1rem;
-    font-weight: 500;
+.reservation-eyebrow-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     margin: 0 0 .5rem;
 }
 
+.reservation-eyebrow {
+    color: var(--color-accent, #FEA116);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-family: 'Pacifico';
+}
+
+.reservation-line {
+    width: 2rem;
+    height: 2px;
+    background: var(--color-accent, #FEA116);
+    border-radius: 1px;
+}
+
 .reservation-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
     line-height: 1.15;
     margin: 0;
     font-weight: 700;
+    color: #fff;
 }
 
 @media (min-width:1024px) {
@@ -85,12 +102,12 @@
 .reservation-form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
 .form-row {
     display: grid;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
 @media (min-width:640px) {
@@ -102,17 +119,23 @@
 .field {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     background: #fff;
-    border: 1px solid #cbd5e1;
-    border-radius: .65rem;
-    padding: .25rem .75rem .25rem 2.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: .5rem;
+    padding: .75rem;
     min-height: 3.25rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Specific alignment for textarea fields */
+.field:has(textarea) {
+    align-items: stretch;
 }
 
 .field:focus-within {
     border-color: var(--color-accent, #FEA116);
-    box-shadow: 0 0 0 2px rgba(254, 161, 22, .35);
+    box-shadow: 0 0 0 3px rgba(254, 161, 22, .2);
 }
 
 .field input,
@@ -124,34 +147,104 @@
     background: transparent;
     padding: .35rem 0;
     outline: none;
-    color: #0f172a;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.field input::placeholder,
+.field select::placeholder,
+.field textarea::placeholder {
+    color: #64748b;
+    opacity: 1;
+}
+
+.field input[type="datetime-local"] {
+    color: #1e293b;
+    font-family: inherit;
 }
 
 .field select {
     appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right .5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
 }
 
 .field textarea {
-    resize: none;
+    resize: vertical;
     line-height: 1.4;
+    min-height: 5rem;
+    padding: 1.35rem 11px;
+    width: 100%;
+    vertical-align: top;
+}
+
+.field textarea::placeholder {
+    color: #64748b;
+    opacity: 1;
+    line-height: 1.4;
+}
+
+/* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 400px;
+    margin: 1rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.popup-content h3 {
+    color: var(--color-accent, #FEA116);
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.popup-content p {
+    margin: 0;
+    color: #374151;
+    line-height: 1.5;
+}
+
+/* Error Message Styles */
+.error-message {
+    display: block;
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+
+.field:has(.error-message) {
+    border-color: #dc2626;
+}
+
+.field:has(.error-message):focus-within {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.25);
 }
 
 .field.field-textarea {
     align-items: flex-start;
-    padding-top: .75rem;
-}
-
-.icon {
-    position: absolute;
-    left: .85rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #94a3b8;
-    display: inline-flex;
-}
-
-.field.field-textarea .icon {
-    top: 1.15rem;
+    padding: 0;
+    min-height: auto;
 }
 
 .actions {
@@ -164,11 +257,12 @@
     color: #fff;
     font-weight: 600;
     border: 0;
-    padding: 1.05rem 1.25rem;
+    padding: 1rem 1.5rem;
     font-size: 1rem;
-    border-radius: .75rem;
+    border-radius: .5rem;
     cursor: pointer;
     letter-spacing: .5px;
+    text-transform: uppercase;
     transition: background .25s ease, transform .25s ease;
 }
 

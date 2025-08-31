@@ -5,19 +5,32 @@ export function ContactSection() {
     <section className="contact-section" aria-labelledby="contact-heading">
       <div className="contact-wrapper">
         <header className="contact-head">
-          <p className="contact-eyebrow">Contact Us</p>
+          <div className="contact-eyebrow-container">
+            <div className="contact-line"></div>
+            <p className="contact-eyebrow">Contact Us</p>
+            <div className="contact-line"></div>
+          </div>
           <h2 id="contact-heading" className="contact-title">Contact For Any Query</h2>
           <div className="contact-info-grid">
             <div className="contact-info-item">
-              <p className="contact-info-label">Booking</p>
+              <div className="contact-info-label-container">
+                <p className="contact-info-label">Booking</p>
+                <div className="contact-info-line"></div>
+              </div>
               <p className="contact-info-value">booking@example.com</p>
             </div>
             <div className="contact-info-item">
-              <p className="contact-info-label">General</p>
+              <div className="contact-info-label-container">
+                <p className="contact-info-label">General</p>
+                <div className="contact-info-line"></div>
+              </div>
               <p className="contact-info-value">general@example.com</p>
             </div>
             <div className="contact-info-item">
-              <p className="contact-info-label">Technical</p>
+              <div className="contact-info-label-container">
+                <p className="contact-info-label">Technical</p>
+                <div className="contact-info-line"></div>
+              </div>
               <p className="contact-info-value">tech@example.com</p>
             </div>
           </div>

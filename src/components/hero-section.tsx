@@ -10,6 +10,7 @@ interface HeroSectionProps {
   backgroundImage?: string
   showFoodImage?: boolean
   overlayOpacity?: number
+  customHeight?: string
 }
 
 export function HeroSection({
@@ -23,14 +24,23 @@ export function HeroSection({
   backgroundImage = "/restaurant-interior-dining-area-with-tables-and-ch.png",
   showFoodImage = false,
   overlayOpacity = .86,
+  customHeight,
 }: HeroSectionProps) {
   return (
     <section
       className="hero-section"
-      style={{ backgroundImage: `url(${backgroundImage})`, ['--hero-overlay-opacity' as any]: overlayOpacity }}
+      style={{ 
+        backgroundImage: `url(${backgroundImage})`, 
+        ['--hero-overlay-opacity' as any]: overlayOpacity,
+        ...(customHeight && { height: customHeight })
+      }}
     >
       <div className="hero-inner">
         <div className="hero-text">
+          {subtitle && <p className="hero-subtitle">{subtitle}</p>}
+
+          <h1 className="hero-title">{title}</h1>
+
           {showBreadcrumb && breadcrumbItems.length > 0 && (
             <div className="hero-breadcrumb">
               {breadcrumbItems.map((item, index) => (
@@ -41,10 +51,6 @@ export function HeroSection({
               ))}
             </div>
           )}
-
-          {subtitle && <p className="hero-subtitle">{subtitle}</p>}
-
-          <h1 className="hero-title">{title}</h1>
 
           {description && <p className="hero-description">{description}</p>}
 

@@ -26,9 +26,9 @@ export function ChefsSection() {
               <h3 className="chef-name">{chef.name}</h3>
               <p className="chef-role">{chef.designation}</p>
               <ul className="social-list" aria-label="Social links" role="list">
-                <li><button className="social-btn" aria-label="Facebook" type="button"> <img src="/fb.svg" alt="" /> </button></li>
-                <li><button className="social-btn" aria-label="Twitter" type="button"> <img src="/twitter.svg" alt="" /> </button></li>
-                <li><button className="social-btn" aria-label="Instagram" type="button"> <img src="/instagram.svg" alt="" /> </button></li>
+                <li> <img src="/fb-icon.svg" alt="" /> </li>
+                <li> <img src="/x.svg" alt="" /> </li>
+                <li> <img src="/insta.svg" alt="" /> </li>
               </ul>
             </li>
           ))}

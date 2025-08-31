@@ -1,0 +1,88 @@
+/* Contact Hero Section Styles */
+.contact-hero-section { 
+    position: relative; 
+    min-height: 50vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background-size: cover; 
+    background-position: center; 
+    text-align: center;
+}
+
+.contact-hero-section[style*="height"] {
+    min-height: unset;
+}
+
+.contact-hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Use CSS variable to control overlay opacity per instance */
+    --_ov: var(--contact-hero-overlay-opacity, .86);
+    background: linear-gradient(rgba(0, 0, 0, var(--_ov)), rgba(0, 0, 0, var(--_ov)));
+}
+
+.contact-hero-inner { 
+    position: relative; 
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 4rem 1.25rem; 
+    text-align: center;
+}
+
+.contact-hero-content {
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.contact-hero-title { 
+    font-size: clamp(2.5rem, 8vw, 4rem); 
+    font-weight: 700; 
+    margin: 0 auto 1.5rem auto; 
+    line-height: 1.1; 
+    color: #fff;
+    text-align: center;
+}
+
+.contact-hero-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-size: .9rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-hero-breadcrumb span {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.contact-hero-breadcrumb .current {
+    color: var(--color-accent, #FEA116);
+    font-weight: 600;
+}
+
+.contact-hero-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 .25rem;
+}
+
+@media (max-width: 640px) {
+    .contact-hero-inner {
+        padding: 3rem 1rem;
+    }
+    
+    .contact-hero-title {
+        font-size: 2.25rem;
+        margin: 0 0 1rem;
+    }
+    
+    .contact-hero-breadcrumb {
+        font-size: .85rem;
+    }
+}

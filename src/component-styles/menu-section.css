@@ -44,9 +44,9 @@
     content: '';
     position: absolute;
     bottom: -8px;
-    left: 0;
-    right: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 22rem);
     height: 2px;
     background-color: #d1d5db;
 }
@@ -69,9 +69,11 @@
 }
 
 .menu-tabs .tab:hover,
-.menu-tabs .tab:focus-visible {
+.menu-tabs .tab:focus-visible,
+.menu-tabs .tab:active {
     color: var(--color-accent, #FEA116);
     outline: none;
+    border: none;
 }
 
 .menu-tabs .tab:hover::after,
@@ -81,7 +83,7 @@
     bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 184px;
     height: 2px;
     background-color: var(--color-accent, #FEA116);
     z-index: 2;

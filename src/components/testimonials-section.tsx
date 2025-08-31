@@ -2,9 +2,9 @@ import "../component-styles/testimonials-section.css";
 
 export function TestimonialsSection() {
   const testimonials = [
-    { text: "Diam sit eos tellus amet justo erat sed sed. Diam lorem sed dolor amet amet volutpat amet lorem diam.", clientName: "Client Name", designation: "Designation", avatar: "/testo-one.svg", isHighlighted: false },
-    { text: "Diam sit eos tellus amet justo erat sed sed. Diam lorem sed dolor amet amet volutpat amet lorem diam.", clientName: "Client Name", designation: "Designation", avatar: "/testo-two.svg", isHighlighted: true },
-    { text: "Diam sit eos tellus amet justo erat sed sed. Diam lorem sed dolor amet amet volutpat amet lorem diam.", clientName: "Client Name", designation: "Designation", avatar: "/testo-three.svg", isHighlighted: false },
+    { text: "Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam", clientName: "Client Name", designation: "Profession", avatar: "/testo-one.svg", isHighlighted: false },
+    { text: "Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam", clientName: "Client Name", designation: "Profession", avatar: "/testo-two.svg", isHighlighted: false },
+    { text: "Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam", clientName: "Client Name", designation: "Profession", avatar: "/testo-three.svg", isHighlighted: false },
   ];
 
   return (
@@ -17,7 +17,8 @@ export function TestimonialsSection() {
           </header>
           <div className="testimonials-grid">
             {testimonials.map((t, i) => (
-              <article key={i} className={`testimonial-card ${t.isHighlighted ? 'highlight' : ''}`}>                
+              <article key={i} className={`testimonial-card ${t.isHighlighted ? 'highlight' : ''}`}>  
+               <img src="/testo-icon.svg" alt="" />              
                 <p className="testimonial-text">{t.text}</p>
                 <div className="client">
                   <img src={t.avatar || '/placeholder.svg'} alt={t.clientName} className="client-avatar" />
