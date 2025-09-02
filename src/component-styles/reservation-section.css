@@ -91,6 +91,7 @@
     margin: 0;
     font-weight: 700;
     color: #fff;
+    display: flex;
 }
 
 @media (min-width:1024px) {
